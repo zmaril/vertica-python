@@ -102,7 +102,7 @@ class Column(object):
         ('integer', lambda s: int(s)),
         ('float', lambda s: float(s)),
         ('char', lambda s: unicode(s, 'utf-8')),
-        ('varchar', lambda s: unicode(s, 'utf-8')),
+        ('varchar', lambda s: s.decode('unicode_escape')),
         ('date', date_parse),
         ('time', None),
         ('timestamp', timestamp_parse),
